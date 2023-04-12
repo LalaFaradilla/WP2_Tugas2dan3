@@ -1,16 +1,14 @@
-<html>
-
-<head>
-    <title>Latihan 1</title>
-</head>
-
-<body>
-    Halo Kawan.. Yuk kita belajar web programming..!!!<br>
-    Nilai 1 = <?= $nilai1; ?>
-    Nilai 2 = <?= $nilai2; ?>
-    ini hasil dari pemodelan dengan methode penjumlahan yaitu <?=
-$nilai1 . " + " . $nilai2 . " = " . $hasil; ?>
-
-</body>
-
-</html>
+<?php
+class Model_latihan1 extends CI_Model
+{
+    //membuat variable untuk menampung nilai
+    public $nilai1, $nilai2, $hasil;
+    //method penjumlahan
+    public function jumlah($n1 = null, $n2 = null)
+    {
+        $this->nilai1 = $n1;
+        $this->nilai2 = $n2;
+        $this->hasil = $this->nilai1 + $this->nilai2;
+        return $this->hasil;
+    }
+}
